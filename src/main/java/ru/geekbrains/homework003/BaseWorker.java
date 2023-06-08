@@ -36,6 +36,4 @@ public abstract class BaseWorker {
         else return false;
     };
 
-
-
 }

@@ -26,4 +26,13 @@ public class FixPayWorker extends BaseWorker {
     public String getPosition() {
         return position;
     }
+
+    @Override
+    public String toString() {
+        return "Имя работника: " + name +
+                ", Возраст: " + age + '\'' +
+                ", Должность: " + position + '\'' +
+                ", Оклад: " + fixedPay +
+                '}';
+    }
 }

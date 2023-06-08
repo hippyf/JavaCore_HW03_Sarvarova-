@@ -1,5 +1,10 @@
 package ru.geekbrains.homework003;
 
+import ru.geekbrains.homework003.array.ArrayWorkers;
+import ru.geekbrains.homework003.sort.SortArrayWorkers;
+
+import java.util.List;
+
 public class Program {
     public static void main(String[] args) {
 
@@ -26,5 +31,27 @@ public class Program {
                 new HourPayWorker("Timur", 27, "Courier", 400),
                 new HourPayWorker("Igor", 38, "Consultant", 800),
         };
+
+        System.out.println("\n Вывод массива:\n");
+        for (BaseWorker worker : workers) {
+            System.out.println(worker.toString());
+        }
+
+        // Задание в)
+
+        System.out.println("\nСортиповка массива по имени:\n");
+        SortArrayWorkers sort = new SortArrayWorkers();
+        sort.sortingArrayWorkers(workers);
+
+
+        // Задание г)
+        System.out.println("\nСоздание массива и вывод данных:\n");
+        BaseWorker worker5 = new FixPayWorker("Gаlina",25, "Manager", 80000);
+        ArrayWorkers arrayWorkers = new ArrayWorkers(); //создание массива с помощью класса ArrayWorkers
+        arrayWorkers.getWorkers().add(worker5); // добавление сотрудника в массив
+        arrayWorkers.getWorkers().add(new HourPayWorker("Dmitriy", 45, "Director", 250000));
+        arrayWorkers.sowWorkersOnConsole(); // вывод данных из массива
+
     }
+
 }
